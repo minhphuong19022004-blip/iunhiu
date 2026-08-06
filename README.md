@@ -1,3 +1,2 @@
 # graduation invitation
-dinhminhphuong iu mng nhiu
-index.html
+dinhminhphuong moi tot nghiep
