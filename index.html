@@ -1,115 +1,213 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Graduation Invitation</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GRADUATION PARTY - DREW STYLE</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;0,900;1,700&display=swap');
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-<style>
-body{
-margin:0;
-font-family:'Poppins',sans-serif;
-background:linear-gradient(180deg,#fffdf9,#f5efe6);
-text-align:center;
-color:#5c4b51;
-}
+        body {
+            /* Tông màu pastel ngọt ngào ấm áp đặc trưng của Drew House */
+            background-color: #fce895;
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
 
-.card{
-max-width:420px;
-margin:40px auto;
-background:white;
-padding:35px;
-border-radius:25px;
-box-shadow:0 15px 40px rgba(0,0,0,.1);
-}
+        /* Khung thiệp bo tròn mềm mại */
+        .card {
+            background-color: #ffffff;
+            border: 4px solid #111111;
+            border-radius: 35px;
+            width: 100%;
+            max-width: 420px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 12px 12px 0px #111111;
+            position: relative;
+            overflow: hidden;
+        }
 
-img{
-width:220px;
-border-radius:50%;
-border:6px solid #e8d9c5;
-margin:20px 0;
-}
+        /* Biểu tượng Smiley Drew House */
+        .smiley-logo {
+            width: 80px;
+            height: 80px;
+            background-color: #fce895;
+            border: 3px solid #111;
+            border-radius: 50%;
+            margin: 0 auto 15px auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
 
-h1{
-font-size:34px;
-margin:0;
-}
+        /* Mắt smiley */
+        .smiley-eyes {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 4px;
+        }
 
-h2{
-color:#b38b59;
-}
+        .eye {
+            width: 8px;
+            height: 14px;
+            background-color: #111;
+            border-radius: 4px;
+        }
 
-.info{
-margin-top:20px;
-font-size:18px;
-line-height:1.8;
-}
+        /* Nụ cười thay bằng chữ "drew" hoặc "JB" */
+        .smiley-text {
+            font-weight: 900;
+            font-size: 0.85rem;
+            letter-spacing: -0.5px;
+            color: #111;
+        }
 
-button{
-margin-top:25px;
-padding:14px 35px;
-border:none;
-background:#b38b59;
-color:white;
-font-size:18px;
-border-radius:30px;
-cursor:pointer;
-}
+        /* Tagline */
+        .tagline {
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #ff4d6d;
+            margin-bottom: 5px;
+        }
 
-button:hover{
-background:#9d7649;
-}
+        /* Title mang phong cách Album Justice / Purpose */
+        h1 {
+            font-size: 2.3rem;
+            font-weight: 900;
+            line-height: 1.1;
+            text-transform: uppercase;
+            color: #111;
+            margin-bottom: 10px;
+        }
 
-.footer{
-margin-top:30px;
-font-size:15px;
-color:#888;
-}
-</style>
+        h1 span {
+            display: block;
+            font-style: italic;
+            color: #70e000;
+            -webkit-text-stroke: 1.5px #111;
+        }
 
+        /* Tên chủ nhân bữa tiệc */
+        .name {
+            font-size: 1.5rem;
+            font-weight: 900;
+            background-color: #111;
+            color: #fff;
+            padding: 8px 15px;
+            border-radius: 20px;
+            display: inline-block;
+            margin: 15px 0;
+            transform: rotate(-2deg);
+        }
+
+        .quote {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #555;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        /* Chi tiết thời gian, địa điểm */
+        .details {
+            background-color: #f7f7f7;
+            border: 2px solid #111;
+            border-radius: 20px;
+            padding: 15px;
+            text-align: left;
+            margin-bottom: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+
+        .details p {
+            margin: 6px 0;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .details p span {
+            color: #777;
+        }
+
+        /* Nút RSVP */
+        .rsvp-btn {
+            width: 100%;
+            background-color: #ff4d6d;
+            color: #fff;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 900;
+            font-size: 1rem;
+            padding: 14px;
+            border: 3px solid #111;
+            border-radius: 25px;
+            cursor: pointer;
+            box-shadow: 4px 4px 0px #111;
+            transition: all 0.2s ease;
+            text-transform: uppercase;
+        }
+
+        .rsvp-btn:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0px #111;
+            background-color: #ff758f;
+        }
+
+        .rsvp-btn:active {
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0px #111;
+        }
+    </style>
 </head>
-
 <body>
 
-<div class="card">
+    <div class="card">
+        <!-- Logo Smiley biểu tượng của nhà Drew -->
+        <div class="smiley-logo">
+            <div class="smiley-eyes">
+                <div class="eye"></div>
+                <div class="eye"></div>
+            </div>
+            <div class="smiley-text">drew</div>
+        </div>
 
-<h2>🎓 Graduation Invitation 🎓</h2>
+        <div class="tagline">Anyone / Peaches / Purpose</div>
+        
+        <h1>GRADUATION <span>CELEBRATION</span></h1>
 
-<h1>Đinh Minh Phương</h1>
+        <!-- Thay tên của bạn vào đây -->
+        <div class="name">BIEBER & [TÊN BẠN]</div>
 
-<img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=700" alt="Graduation">
+        <p class="quote">"I got my degree, yeah, load it up!" 🎓✨</p>
 
-<p><i>"Every ending is a new beginning."</i></p>
+        <!-- Chi tiết sự kiện -->
+        <div class="details">
+            <p><span>WHEN:</span> <strong>Sat, Aug 21, 2026</strong></p>
+            <p><span>TIME:</span> <strong>05:00 PM - Till Late</strong></p>
+            <p><span>WHERE:</span> <strong>Justice Lounge, Hanoi</strong></p>
+            <p><span>DRESS CODE:</span> <strong>Oversized / Y2K Vibe</strong></p>
+        </div>
 
-<div class="info">
-
-📅 <b>08:00 - Thứ Bảy</b><br>
-
-Ngày ... tháng ... năm 2026
-
-<br><br>
-
-📍 Trường Đại học .............
-
-<br><br>
-
-💐 Rất hân hạnh được đón tiếp bạn đến tham dự buổi lễ tốt nghiệp của mình.
-
-</div>
-
-<button onclick="window.open('https://maps.google.com')">
-📍 Xem địa điểm
-</button>
-
-<div class="footer">
-
-Cảm ơn vì đã đồng hành cùng mình ❤️
-
-</div>
-
-</div>
+        <!-- Nút tương tác -->
+        <button class="rsvp-btn" onclick="alert('Baby, baby, baby, oh! Cảm ơn bạn đã xác nhận tham dự! ❤️')">
+            LET'S CELEBRATE / RSVP
+        </button>
+    </div>
 
 </body>
 </html>
