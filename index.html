@@ -4,16 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thiệp Mời Lễ Tốt Nghiệp - Đinh Minh Phương</title>
-    <!-- Google Fonts: Phông chữ phong cách cổ điển và nghệ thuật -->
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Charm:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel:wght@500;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
     <style>
         :root {
-            --van-gogh-blue: #1d3557;
-            --van-gogh-deep-blue: #0b1d3a;
-            --van-gogh-yellow: #f4a261;
-            --van-gogh-gold: #e9c46a;
-            --paper-vintage: #fdf6e3;
-            --text-dark: #2b2d42;
+            --bg-deep-blue: #091326;
+            --van-gogh-blue: #15294a;
+            --van-gogh-swirl: #1e3a68;
+            --gold-primary: #d4af37;
+            --gold-light: #f3e5ab;
+            --gold-dark: #aa7c11;
+            --parchment: #fcf9f2;
+            --text-dark: #1c2331;
+            --text-muted: #5c6b80;
         }
 
         * {
@@ -23,338 +31,852 @@
         }
 
         body {
-            background: linear-gradient(135deg, var(--van-gogh-deep-blue), var(--van-gogh-blue));
-            font-family: 'Playfair Display', serif;
+            background-color: var(--bg-deep-blue);
+            background-image: 
+                radial-gradient(circle at 15% 20%, rgba(212, 175, 55, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 85% 80%, rgba(30, 58, 104, 0.5) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(21, 41, 74, 0.8) 0%, var(--bg-deep-blue) 100%);
+            font-family: 'Cormorant Garamond', serif;
             color: var(--text-dark);
+            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
-            padding: 20px;
+            padding: 30px 15px;
+            overflow-x: hidden;
         }
 
-        /* Khung Thiệp Cổ Điển */
-        .invitation-card {
-            background-color: var(--paper-vintage);
+        /* Container Card */
+        .card-wrapper {
             width: 100%;
-            max-width: 680px;
-            padding: 40px 30px;
-            border-radius: 12px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
-            border: 10px solid var(--van-gogh-gold);
-            outline: 2px dashed var(--van-gogh-deep-blue);
-            outline-offset: -6px;
+            max-width: 720px;
             position: relative;
-            background-image: radial-gradient(circle at 50% 50%, rgba(233, 196, 106, 0.15), transparent 70%);
         }
 
-        /* Tiêu Đề & Nhãn */
+        .invitation-card {
+            background-color: var(--parchment);
+            border-radius: 16px;
+            padding: 50px 40px;
+            box-shadow: 
+                0 20px 50px rgba(0, 0, 0, 0.6),
+                0 0 30px rgba(212, 175, 55, 0.2);
+            position: relative;
+            border: 2px solid var(--gold-primary);
+            overflow: hidden;
+        }
+
+        /* Gold Foil Border Frame */
+        .invitation-card::before {
+            content: '';
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            right: 12px;
+            bottom: 12px;
+            border: 1px solid var(--gold-primary);
+            outline: 1px solid var(--gold-dark);
+            outline-offset: -4px;
+            pointer-events: none;
+            border-radius: 8px;
+        }
+
+        /* Corner Decorative Ornaments */
+        .corner-ornament {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border-color: var(--gold-primary);
+            border-style: solid;
+            pointer-events: none;
+        }
+        .top-left { top: 18px; left: 18px; border-width: 3px 0 0 3px; }
+        .top-right { top: 18px; right: 18px; border-width: 3px 3px 0 0; }
+        .bottom-left { bottom: 18px; left: 18px; border-width: 0 0 3px 3px; }
+        .bottom-right { bottom: 18px; right: 18px; border-width: 0 3px 3px 0; }
+
+        /* Wax Seal Accent */
+        .wax-seal {
+            width: 65px;
+            height: 65px;
+            background: linear-gradient(135deg, #8b0000, #b22222, #5c0000);
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3), inset 0 2px 4px rgba(255,255,255,0.3);
+            border: 2px solid #660000;
+            color: var(--gold-light);
+            font-size: 1.8rem;
+            position: relative;
+        }
+        .wax-seal::after {
+            content: '';
+            position: absolute;
+            width: 53px;
+            height: 53px;
+            border: 1px dashed rgba(212, 175, 55, 0.6);
+            border-radius: 50%;
+        }
+
+        /* Header Section */
         .header {
             text-align: center;
-            border-bottom: 2px solid var(--van-gogh-gold);
-            padding-bottom: 20px;
-            margin-bottom: 25px;
-        }
-
-        .header h1 {
-            font-family: 'Cinzel', serif;
-            color: var(--van-gogh-deep-blue);
-            font-size: 2.2rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-
-        .header p {
-            font-family: 'Charm', cursive;
-            font-size: 1.3rem;
-            color: #d4a373;
-            margin-top: 5px;
-        }
-
-        /* Lời Mời */
-        .invitation-body {
-            text-align: center;
-            line-height: 1.8;
-            font-size: 1.1rem;
             margin-bottom: 30px;
         }
 
-        .inviter-name {
+        .sub-title {
             font-family: 'Cinzel', serif;
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--van-gogh-blue);
-            margin: 10px 0;
-            text-decoration: underline dotted var(--van-gogh-gold);
+            letter-spacing: 4px;
+            font-size: 0.95rem;
+            color: var(--gold-dark);
+            text-transform: uppercase;
+            margin-bottom: 8px;
         }
 
-        /* Chi Tiết Thời Gian, Địa Điểm */
-        .details-box {
-            background: rgba(29, 53, 87, 0.05);
-            border-left: 4px solid var(--van-gogh-gold);
-            padding: 15px 20px;
-            margin: 20px 0;
+        .main-title {
+            font-family: 'Cinzel', serif;
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: var(--van-gogh-blue);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            line-height: 1.2;
+            margin-bottom: 10px;
+            background: linear-gradient(45deg, var(--van-gogh-blue), var(--gold-dark));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .art-divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin: 15px 0;
+            color: var(--gold-primary);
+        }
+        .art-divider::before, .art-divider::after {
+            content: '';
+            height: 1px;
+            width: 80px;
+            background: linear-gradient(to right, transparent, var(--gold-primary), transparent);
+        }
+
+        /* Main Invitation Text */
+        .content-body {
+            text-align: center;
+            line-height: 1.8;
+            font-size: 1.2rem;
+            margin-bottom: 35px;
+        }
+
+        .inviter-name {
+            font-family: 'Alex Brush', cursive;
+            font-size: 3.6rem;
+            color: var(--van-gogh-blue);
+            margin: 15px 0;
+            line-height: 1;
+            text-shadow: 1px 1px 2px rgba(212, 175, 55, 0.3);
+        }
+
+        .invitation-quote {
+            font-style: italic;
+            color: var(--text-muted);
+            max-width: 85%;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+
+        /* Event Details Box */
+        .event-details {
+            background: rgba(21, 41, 74, 0.04);
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 30px 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
             text-align: left;
         }
 
-        .details-box p {
-            margin: 8px 0;
-            font-size: 1.05rem;
+        .detail-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
         }
 
-        .details-box strong {
-            color: var(--van-gogh-deep-blue);
+        .detail-icon {
+            width: 42px;
+            height: 42px;
+            background-color: var(--van-gogh-blue);
+            color: var(--gold-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
         }
 
-        /* Khung Ảnh Trống Phong Cách Vintage Polaroid */
-        .gallery-section {
-            margin: 30px 0;
-            text-align: center;
-        }
-
-        .gallery-title {
+        .detail-text h4 {
             font-family: 'Cinzel', serif;
+            font-size: 0.95rem;
+            color: var(--gold-dark);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 3px;
+        }
+
+        .detail-text p {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--van-gogh-blue);
+        }
+
+        /* Countdown Timer */
+        .countdown-container {
+            text-align: center;
+            margin: 25px 0;
+        }
+        .countdown-title {
+            font-family: 'Cinzel', serif;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+            text-transform: uppercase;
+        }
+        .timer {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        .time-box {
+            background: var(--van-gogh-blue);
+            color: var(--gold-light);
+            padding: 8px 14px;
+            border-radius: 8px;
+            min-width: 60px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+        .time-box span {
+            display: block;
+            font-family: 'Cinzel', serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            line-height: 1;
+        }
+        .time-box label {
+            font-size: 0.75rem;
+            opacity: 0.8;
+            text-transform: uppercase;
+        }
+
+        /* Interactive Photo Upload Gallery */
+        .gallery-section {
+            margin: 40px 0 30px;
+        }
+        .section-title {
+            font-family: 'Cinzel', serif;
+            text-align: center;
             font-size: 1.2rem;
             color: var(--van-gogh-blue);
-            margin-bottom: 15px;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            position: relative;
         }
 
         .photo-grid {
             display: flex;
-            gap: 15px;
+            gap: 18px;
             justify-content: center;
             flex-wrap: wrap;
         }
 
-        .photo-placeholder {
-            width: 140px;
-            height: 170px;
-            background: #fff;
-            padding: 10px 10px 30px 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-            border: 1px solid #ddd;
-            transform: rotate(-2deg);
-            transition: transform 0.3s ease;
+        .polaroid-frame {
+            background: #ffffff;
+            padding: 10px 10px 35px 10px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+            border: 1px solid #eaeaea;
+            width: 160px;
+            height: 200px;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            cursor: pointer;
+        }
+        .polaroid-frame:nth-child(1) { transform: rotate(-3deg); }
+        .polaroid-frame:nth-child(2) { transform: rotate(2deg); }
+        .polaroid-frame:nth-child(3) { transform: rotate(-2deg); }
+
+        .polaroid-frame:hover {
+            transform: scale(1.06) rotate(0deg);
+            z-index: 5;
+            box-shadow: 0 12px 25px rgba(0,0,0,0.2);
         }
 
-        .photo-placeholder:nth-child(2) {
-            transform: rotate(3deg);
-        }
-
-        .photo-placeholder:hover {
-            transform: scale(1.05) rotate(0deg);
-            z-index: 2;
-        }
-
-        .photo-frame {
+        .photo-display {
             width: 100%;
-            height: 100%;
-            border: 2px dashed var(--van-gogh-gold);
-            background: #f9f9f9;
+            height: 140px;
+            background-color: #f4f1ea;
+            border: 1px dashed var(--gold-primary);
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
-            color: #888;
+            color: var(--text-muted);
             font-size: 0.85rem;
-            text-align: center;
+            overflow: hidden;
+            position: relative;
         }
 
-        /* Trình Phát Nhạc Nền */
-        .music-player {
-            background: var(--van-gogh-deep-blue);
-            color: var(--paper-vintage);
-            padding: 12px 20px;
-            border-radius: 30px;
+        .photo-display img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .upload-icon {
+            font-size: 1.4rem;
+            color: var(--gold-dark);
+            margin-bottom: 5px;
+        }
+
+        .caption {
+            position: absolute;
+            bottom: 8px;
+            font-family: 'Alex Brush', cursive;
+            font-size: 1.2rem;
+            color: var(--van-gogh-blue);
+        }
+
+        .file-input {
+            display: none;
+        }
+
+        /* Vinyl Record Music Player */
+        .music-player-container {
+            background: linear-gradient(135deg, var(--van-gogh-blue), var(--bg-deep-blue));
+            border: 1px solid var(--gold-primary);
+            border-radius: 50px;
+            padding: 12px 24px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            margin: 25px 0;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            margin: 30px 0;
+            color: var(--gold-light);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.25);
         }
 
-        .music-info {
-            font-size: 0.9rem;
+        .music-info-group {
+            display: flex;
+            align-items: center;
+            gap: 15px;
         }
 
-        .music-btn {
-            background: var(--van-gogh-gold);
+        .vinyl-record {
+            width: 44px;
+            height: 44px;
+            background: radial-gradient(circle, #333 30%, #111 70%);
+            border-radius: 50%;
+            border: 2px solid var(--gold-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: spin 4s linear infinite;
+            animation-play-state: paused;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+        }
+        .vinyl-record::after {
+            content: '';
+            width: 12px;
+            height: 12px;
+            background: var(--gold-primary);
+            border-radius: 50%;
+        }
+
+        @keyframes spin {
+            100% { transform: rotate(360deg); }
+        }
+
+        .song-title {
+            font-size: 0.95rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+        .song-artist {
+            font-size: 0.8rem;
+            opacity: 0.75;
+        }
+
+        .play-btn {
+            background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark));
+            color: var(--bg-deep-blue);
             border: none;
-            color: var(--van-gogh-deep-blue);
-            padding: 6px 15px;
-            border-radius: 15px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
             cursor: pointer;
-            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            transition: transform 0.2s;
+        }
+        .play-btn:hover {
+            transform: scale(1.1);
+        }
+
+        /* Action Buttons */
+        .rsvp-btn {
+            display: block;
+            width: 100%;
+            max-width: 280px;
+            margin: 0 auto 35px;
+            padding: 14px 20px;
+            background: linear-gradient(135deg, var(--van-gogh-blue), var(--bg-deep-blue));
+            color: var(--gold-light);
+            border: 1px solid var(--gold-primary);
+            border-radius: 30px;
             font-family: 'Cinzel', serif;
-            transition: background 0.2s;
-        }
-
-        .music-btn:hover {
-            background: var(--van-gogh-yellow);
-        }
-
-        /* Sổ Lưu Bút */
-        .guestbook-section {
-            border-top: 2px dashed var(--van-gogh-gold);
-            padding-top: 25px;
-            margin-top: 30px;
-        }
-
-        .guestbook-section h3 {
-            font-family: 'Cinzel', serif;
-            color: var(--van-gogh-deep-blue);
+            font-size: 1rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            cursor: pointer;
             text-align: center;
-            margin-bottom: 15px;
+            box-shadow: 0 6px 15px rgba(212, 175, 55, 0.25);
+            transition: all 0.3s;
+        }
+        .rsvp-btn:hover {
+            background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark));
+            color: var(--bg-deep-blue);
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.4);
+            transform: translateY(-2px);
         }
 
-        .guestbook-form input, 
-        .guestbook-form textarea {
+        /* Guestbook Section */
+        .guestbook-section {
+            border-top: 1px solid rgba(212, 175, 55, 0.3);
+            padding-top: 30px;
+        }
+
+        .guestbook-form {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 25px;
+        }
+
+        .form-input, .form-textarea {
             width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid var(--van-gogh-gold);
-            border-radius: 4px;
+            padding: 12px 16px;
+            border: 1px solid rgba(212, 175, 55, 0.5);
+            border-radius: 8px;
             background: rgba(255, 255, 255, 0.8);
-            font-family: 'Playfair Display', serif;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.05rem;
+            color: var(--text-dark);
+            outline: none;
+            transition: border-color 0.3s;
+        }
+        .form-input:focus, .form-textarea:focus {
+            border-color: var(--van-gogh-blue);
+            background: #ffffff;
         }
 
-        .guestbook-form button {
-            width: 100%;
-            padding: 10px;
+        .submit-btn {
             background: var(--van-gogh-blue);
-            color: white;
+            color: var(--gold-light);
             border: none;
-            border-radius: 4px;
+            padding: 12px;
+            border-radius: 8px;
             font-family: 'Cinzel', serif;
-            font-weight: bold;
+            font-size: 0.9rem;
+            letter-spacing: 1.5px;
+            font-weight: 700;
             cursor: pointer;
             transition: background 0.3s;
         }
-
-        .guestbook-form button:hover {
-            background: var(--van-gogh-deep-blue);
+        .submit-btn:hover {
+            background: var(--gold-dark);
         }
 
-        .wishes-list {
-            margin-top: 20px;
-            max-height: 180px;
+        .wishes-container {
+            max-height: 220px;
             overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            padding-right: 5px;
         }
 
-        .wish-item {
-            background: rgba(255, 255, 255, 0.6);
-            padding: 10px;
-            border-radius: 4px;
-            border-left: 3px solid var(--van-gogh-yellow);
-            margin-bottom: 8px;
-            font-size: 0.95rem;
+        .wish-card {
+            background: rgba(255, 255, 255, 0.7);
+            border-left: 3px solid var(--gold-primary);
+            padding: 12px 15px;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
-
-        .wish-item strong {
+        .wish-author {
+            font-family: 'Cinzel', serif;
+            font-size: 0.9rem;
             color: var(--van-gogh-blue);
+            font-weight: 700;
+            margin-bottom: 3px;
+        }
+        .wish-text {
+            font-size: 1.05rem;
+            color: var(--text-dark);
+            line-height: 1.4;
+        }
+
+        /* Modal Popup RSVP */
+        .modal-overlay {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(9, 19, 38, 0.85);
+            backdrop-filter: blur(5px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 100;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+        .modal-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .modal-content {
+            background: var(--parchment);
+            border: 2px solid var(--gold-primary);
+            border-radius: 12px;
+            padding: 35px 30px;
+            width: 90%;
+            max-width: 450px;
+            position: relative;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+            text-align: center;
+        }
+        .close-modal {
+            position: absolute;
+            top: 12px; right: 15px;
+            font-size: 1.4rem;
+            color: var(--text-muted);
+            cursor: pointer;
+        }
+
+        /* Scrollbar Styling */
+        .wishes-container::-webkit-scrollbar {
+            width: 5px;
+        }
+        .wishes-container::-webkit-scrollbar-thumb {
+            background: var(--gold-primary);
+            border-radius: 10px;
+        }
+
+        @media (max-width: 600px) {
+            .invitation-card { padding: 35px 20px; }
+            .main-title { font-size: 1.8rem; }
+            .inviter-name { font-size: 2.8rem; }
+            .event-details { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
-    <div class="invitation-card">
-        <!-- Tiêu Đề Thiệp -->
-        <div class="header">
-            <h1>Thiệp Mời Tốt Nghiệp</h1>
-            <p>Phóng tác theo phong cách Van Gogh</p>
-        </div>
+    <div class="card-wrapper">
+        <div class="invitation-card">
+            <!-- Corner Ornaments -->
+            <div class="corner-ornament top-left"></div>
+            <div class="corner-ornament top-right"></div>
+            <div class="corner-ornament bottom-left"></div>
+            <div class="corner-ornament bottom-right"></div>
 
-        <!-- Nội Dung Lời Mời -->
-        <div class="invitation-body">
-            <p>Trân trọng kính mời bạn đến tham dự Lễ Tốt Nghiệp của</p>
-            <div class="inviter-name">Đinh Minh Phương</div>
-            <p>Sự hiện diện của bạn là niềm vinh hạnh và là mảnh ghép rực rỡ nhất trong ngày vui trọn vẹn này.</p>
-        </div>
+            <!-- Wax Seal Badge -->
+            <div class="wax-seal">
+                <i class="fa-solid fa-graduation-cap"></i>
+            </div>
 
-        <!-- Chi Tiết Thời Gian & Địa Điểm -->
-        <div class="details-box">
-            <p><strong>🕒 Thời gian:</strong> 10h30 — Thứ 3, Ngày 11 tháng 08</p>
-            <p><strong>📍 Địa điểm:</strong> Hội trường 808</p>
-        </div>
-
-        <!-- Khung Hình Trống Dành Để Chèn Ảnh -->
-        <div class="gallery-section">
-            <div class="gallery-title">✦ Kỷ Niệm Đáng Nhớ ✦</div>
-            <div class="photo-grid">
-                <div class="photo-placeholder">
-                    <div class="photo-frame">Chèn ảnh 1 vào đây</div>
-                </div>
-                <div class="photo-placeholder">
-                    <div class="photo-frame">Chèn ảnh 2 vào đây</div>
+            <!-- Header -->
+            <div class="header">
+                <div class="sub-title">Trân Trọng Kính Mời Dự</div>
+                <h1 class="main-title">Lễ Tốt Nghiệp</h1>
+                <div class="art-divider">
+                    <i class="fa-solid fa-star" style="font-size: 0.8rem;"></i>
                 </div>
             </div>
-        </div>
 
-        <!-- Trình Phát Nhạc Nền -->
-        <div class="music-player">
-            <div class="music-info">
-                🎵 Nhạc nền: <strong>What Makes You Beautiful</strong>
+            <!-- Invitation Text -->
+            <div class="content-body">
+                <p>Sự hiện diện của Quý vị là niềm vinh hạnh to lớn đối với</p>
+                <div class="inviter-name">Đinh Minh Phương</div>
+                <p class="invitation-quote">
+                    "Hành trình vạn dặm bắt đầu từ một bước chân. Cảm ơn bạn đã luôn là một phần ý nghĩa trong chặng đường học tập của tôi."
+                </p>
             </div>
-            <button class="music-btn" id="playBtn" onclick="toggleAudio()">Bật Nhạc</button>
-            <audio id="bgMusic" loop>
-                <!-- Thay link audio dưới đây bằng file nhạc MP3 thực tế của bạn -->
-                <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
-            </audio>
-        </div>
 
-        <!-- Sổ Lưu Bút -->
-        <div class="guestbook-section">
-            <h3>✦ Sổ Lưu Bút Kỷ Niệm ✦</h3>
-            <form class="guestbook-form" id="wishForm">
-                <input type="text" id="guestName" placeholder="Tên của bạn..." required>
-                <textarea id="guestWish" rows="3" placeholder="Gửi lời chúc đến Minh Phương..." required></textarea>
-                <button type="submit">Gửi Lời Chúc</button>
+            <!-- Details -->
+            <div class="event-details">
+                <div class="detail-item">
+                    <div class="detail-icon">
+                        <i class="fa-solid fa-clock"></i>
+                    </div>
+                    <div class="detail-text">
+                        <h4>Thời Gian</h4>
+                        <p>10:30 — Thứ Ba</p>
+                        <span style="font-size: 0.95rem; color: var(--text-muted);">Ngày 11 tháng 08</span>
+                    </div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-icon">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <div class="detail-text">
+                        <h4>Địa Điểm</h4>
+                        <p>Hội Trường 808</p>
+                        <span style="font-size: 0.95rem; color: var(--text-muted);">Khuôn viên nhà trường</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Countdown Timer -->
+            <div class="countdown-container">
+                <div class="countdown-title">✦ Đếm ngược đến sự kiện ✦</div>
+                <div class="timer">
+                    <div class="time-box"><span id="days">00</span><label>Ngày</label></div>
+                    <div class="time-box"><span id="hours">00</span><label>Giờ</label></div>
+                    <div class="time-box"><span id="minutes">00</span><label>Phút</label></div>
+                    <div class="time-box"><span id="seconds">00</span><label>Giây</label></div>
+                </div>
+            </div>
+
+            <!-- Interactive Photo Gallery -->
+            <div class="gallery-section">
+                <h3 class="section-title">✦ Góc Kỷ Niệm ✦</h3>
+                <p style="text-align: center; font-size: 0.95rem; color: var(--text-muted); margin-bottom: 15px;">
+                    (Nhấp vào khung để chèn ảnh của bạn)
+                </p>
+                <div class="photo-grid">
+                    <!-- Frame 1 -->
+                    <div class="polaroid-frame" onclick="triggerUpload(1)">
+                        <div class="photo-display" id="display-1">
+                            <i class="fa-solid fa-cloud-arrow-up upload-icon"></i>
+                            <span>Chèn ảnh 1</span>
+                        </div>
+                        <div class="caption">Kỷ niệm</div>
+                        <input type="file" id="input-1" class="file-input" accept="image/*" onchange="previewImage(event, 1)">
+                    </div>
+                    <!-- Frame 2 -->
+                    <div class="polaroid-frame" onclick="triggerUpload(2)">
+                        <div class="photo-display" id="display-2">
+                            <i class="fa-solid fa-cloud-arrow-up upload-icon"></i>
+                            <span>Chèn ảnh 2</span>
+                        </div>
+                        <div class="caption">Tốt nghiệp</div>
+                        <input type="file" id="input-2" class="file-input" accept="image/*" onchange="previewImage(event, 2)">
+                    </div>
+                    <!-- Frame 3 -->
+                    <div class="polaroid-frame" onclick="triggerUpload(3)">
+                        <div class="photo-display" id="display-3">
+                            <i class="fa-solid fa-cloud-arrow-up upload-icon"></i>
+                            <span>Chèn ảnh 3</span>
+                        </div>
+                        <div class="caption">Thanh xuân</div>
+                        <input type="file" id="input-3" class="file-input" accept="image/*" onchange="previewImage(event, 3)">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Background Music Player -->
+            <div class="music-player-container">
+                <div class="music-info-group">
+                    <div class="vinyl-record" id="vinyl"></div>
+                    <div>
+                        <div class="song-title">What Makes You Beautiful</div>
+                        <div class="song-artist">One Direction (Background Music)</div>
+                    </div>
+                </div>
+                <button class="play-btn" onclick="togglePlay()" id="playIcon">
+                    <i class="fa-solid fa-play"></i>
+                </button>
+                <audio id="audioTrack" loop>
+                    <!-- Audio Link Placeholder -->
+                    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+
+            <!-- RSVP Button -->
+            <button class="rsvp-btn" onclick="openRsvpModal()">
+                <i class="fa-solid fa-envelope-open-text" style="margin-right: 8px;"></i>
+                Xác Nhận Tham Dự
+            </button>
+
+            <!-- Guestbook Section -->
+            <div class="guestbook-section">
+                <h3 class="section-title">✦ Sổ Lưu Bút Kỷ Niệm ✦</h3>
+                <form class="guestbook-form" id="guestbookForm">
+                    <input type="text" id="guestName" class="form-input" placeholder="Tên của bạn..." required>
+                    <textarea id="guestMessage" class="form-textarea" rows="3" placeholder="Gửi lời chúc tốt đẹp đến Minh Phương..." required></textarea>
+                    <button type="submit" class="submit-btn">GỬI LỜI CHÚC</button>
+                </form>
+
+                <div class="wishes-container" id="wishesContainer">
+                    <div class="wish-card">
+                        <div class="wish-author">Thầy Cô & Bè Bạn</div>
+                        <div class="wish-text">Chúc Minh Phương bước sang chương mới của cuộc đời thật tự tin, rực rỡ và gặt hái nhiều thành công!</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- RSVP Modal Window -->
+    <div class="modal-overlay" id="rsvpModal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeRsvpModal()">&times;</span>
+            <h3 style="font-family: 'Cinzel', serif; color: var(--van-gogh-blue); margin-bottom: 10px;">Xác Nhận Tham Dự</h3>
+            <p style="margin-bottom: 20px; font-size: 1.05rem;">Vui lòng phản hồi để Minh Phương chuẩn bị đón tiếp chu đáo nhất nhé!</p>
+            <form id="rsvpForm" onsubmit="handleRsvpSubmit(event)">
+                <input type="text" class="form-input" placeholder="Họ và tên của bạn" required style="margin-bottom: 12px;">
+                <select class="form-input" required style="margin-bottom: 20px;">
+                    <option value="">Bạn sẽ đến tham dự chứ?</option>
+                    <option value="yes">Chắc chắn sẽ đến tham dự 🎉</option>
+                    <option value="sorry">Rất tiếc không thể đến 😢</option>
+                </select>
+                <button type="submit" class="submit-btn" style="width: 100%;">XÁC NHẬN</button>
             </form>
-
-            <div class="wishes-list" id="wishesList">
-                <div class="wish-item">
-                    <strong>Nguyễn Văn A:</strong> Chúc Minh Phương tốt nghiệp rực rỡ và luôn thành công trên con đường tương lai!
-                </div>
-            </div>
         </div>
     </div>
 
     <script>
-        // Điều khiển nhạc nền
-        const audio = document.getElementById('bgMusic');
-        const playBtn = document.getElementById('playBtn');
+        // Photo Upload Handler
+        function triggerUpload(index) {
+            document.getElementById(`input-${index}`).click();
+        }
 
-        function toggleAudio() {
-            if (audio.paused) {
-                audio.play();
-                playBtn.innerText = "Tắt Nhạc";
-            } else {
-                audio.pause();
-                playBtn.innerText = "Bật Nhạc";
+        function previewImage(event, index) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const display = document.getElementById(`display-${index}`);
+                    display.innerHTML = `<img src="${e.target.result}" alt="Uploaded photo">`;
+                };
+                reader.readAsDataURL(file);
             }
         }
 
-        // Xử lý ghi sổ lưu bút
-        document.getElementById('wishForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const name = document.getElementById('guestName').value;
-            const wish = document.getElementById('guestWish').value;
-            
-            const wishesList = document.getElementById('wishesList');
-            const newWish = document.createElement('div');
-            newWish.className = 'wish-item';
-            newWish.innerHTML = `<strong>${name}:</strong> ${wish}`;
-            
-            wishesList.prepend(newWish);
+        // Music Player Controls
+        const audio = document.getElementById('audioTrack');
+        const vinyl = document.getElementById('vinyl');
+        const playIcon = document.getElementById('playIcon');
+        let isPlaying = false;
 
-            // Reset form
-            document.getElementById('guestName').value = '';
-            document.getElementById('guestWish').value = '';
+        function togglePlay() {
+            if (isPlaying) {
+                audio.pause();
+                vinyl.style.animationPlayState = 'paused';
+                playIcon.innerHTML = '<i class="fa-solid fa-play"></i>';
+            } else {
+                audio.play();
+                vinyl.style.animationPlayState = 'running';
+                playIcon.innerHTML = '<i class="fa-solid fa-pause"></i>';
+            }
+            isPlaying = !isPlaying;
+        }
+
+        // Countdown Timer to Aug 11th (10:30 AM)
+        function updateCountdown() {
+            const now = new Date();
+            let targetYear = now.getFullYear();
+            let targetDate = new Date(`August 11, ${targetYear} 10:30:00`);
+
+            if (now > targetDate) {
+                targetDate = new Date(`August 11, ${targetYear + 1} 10:30:00`);
+            }
+
+            const diff = targetDate - now;
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+            const minutes = Math.floor((diff / 1000 / 60) % 60);
+            const seconds = Math.floor((diff / 1000) % 60);
+
+            document.getElementById('days').innerText = String(days).padStart(2, '0');
+            document.getElementById('hours').innerText = String(hours).padStart(2, '0');
+            document.getElementById('minutes').innerText = String(minutes).padStart(2, '0');
+            document.getElementById('seconds').innerText = String(seconds).padStart(2, '0');
+        }
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // Guestbook Local Storage Handling
+        const guestbookForm = document.getElementById('guestbookForm');
+        const wishesContainer = document.getElementById('wishesContainer');
+
+        function loadWishes() {
+            const savedWishes = JSON.parse(localStorage.getItem('minh_phuong_wishes') || '[]');
+            savedWishes.forEach(wish => appendWishToDOM(wish.name, wish.message));
+        }
+
+        function appendWishToDOM(name, message) {
+            const card = document.createElement('div');
+            card.className = 'wish-card';
+            card.innerHTML = `
+                <div class="wish-author">${escapeHTML(name)}</div>
+                <div class="wish-text">${escapeHTML(message)}</div>
+            `;
+            wishesContainer.prepend(card);
+        }
+
+        guestbookForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('guestName').value.trim();
+            const message = document.getElementById('guestMessage').value.trim();
+
+            if (name && message) {
+                appendWishToDOM(name, message);
+
+                // Save to local storage
+                const savedWishes = JSON.parse(localStorage.getItem('minh_phuong_wishes') || '[]');
+                savedWishes.push({ name, message });
+                localStorage.setItem('minh_phuong_wishes', JSON.stringify(savedWishes));
+
+                // Reset inputs
+                document.getElementById('guestName').value = '';
+                document.getElementById('guestMessage').value = '';
+            }
         });
+
+        function escapeHTML(str) {
+            return str.replace(/[&<>'"]/g, 
+                tag => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[tag] || tag)
+            );
+        }
+
+        loadWishes();
+
+        // RSVP Modal Functions
+        function openRsvpModal() {
+            document.getElementById('rsvpModal').classList.add('active');
+        }
+        function closeRsvpModal() {
+            document.getElementById('rsvpModal').classList.remove('active');
+        }
+        function handleRsvpSubmit(e) {
+            e.preventDefault();
+            alert('Cảm ơn bạn đã phản hồi! Minh Phương rất mong chờ được gặp bạn.');
+            closeRsvpModal();
+        }
     </script>
 </body>
 </html>
