@@ -403,7 +403,7 @@
         <div class="header-tag">🚨 CẢNH BÁO SỰ KIỆN NGHÌN NĂM CÓ MỘT 🚨</div>
         
         <h1 class="title">THIỆP MỜI DỰ LỄ TỐT NGHIỆP</h1>
-        <div class="sub-title">"Thông báo khẩn Đinh Minh Phương chính thức ra trường, xã hội chuẩn bị tinh thần!" 🎓✨</div>
+        <div class="sub-title">"ĐMP chính thức ra trường, xã hội chuẩn bị tinh thần!" 🎓✨</div>
 
         <!-- Meme Avatar Kevin Hart Style -->
 <div class="avatar-box">
@@ -463,18 +463,19 @@
             </div>
         </div>
 
-       <!-- Nhạc Nền -->
+ <!-- Nhạc Nền Có Lời -->
 <div class="music-box">
     <div class="music-info">
         <span class="music-disc" id="disc">💿</span>
-        <span>Nhạc quẩy: <strong>Congratulations – Post Malone</strong> 🎵</span>
+        <span>Nhạc quẩy: <strong>Congratulations – Post Malone (Audio)</strong> 🎤🎵</span>
     </div>
     <button class="btn-play" id="playBtn" onclick="toggleMusic()">▶️ Bật Nhạc</button>
-    <audio id="bgMusic" loop>
-        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3" type="audio/mpeg">
+    <audio id="bgMusic" loop preload="metadata">
+        <!-- Đường link file nhạc MP3 bản chính thức có lời -->
+        <source src="https://ia801503.us.archive.org/15/items/post-malone-congratulations-ft.-quavo/Post%20Malone%20-%20Congratulations%20ft.%20Quavo.mp3" type="audio/mpeg">
+        Trình duyệt của bạn không hỗ trợ phát âm thanh.
     </audio>
 </div>
-
         <!-- Button Nút Điểm Danh -->
         <button class="rsvp-btn" onclick="confirmRSVP()">🙋‍♂️ Chắc Chắn Sẽ Đến Chúc Mừng!</button>
 
@@ -482,13 +483,12 @@
         <div class="guestbook">
             <h3>📖 Sổ Lưu Bút "Bóc Phốt" & Lời Chúc</h3>
             <div class="input-group">
-                <input type="text" id="guestName" placeholder="Tên danh tính của bạn (hoặc Biệt danh secret)...">
-                <textarea id="guestWish" rows="2" placeholder="Gửi lời chúc ngầu đét hoặc dìm hàng nhẹ nhàng..."></textarea>
-                <button class="btn-send" onclick="addWish()">🚀 thả nhẹ vài lời iu thương </button>
+                <input type="text" id="guestName" placeholder="Danh tính của bạn (hoặc Biệt danh secret)...">
+                <textarea id="guestWish" rows="2" placeholder="Gửi vài lời iu thương..."></textarea>
+                <button class="btn-send" onclick="addWish()">🚀 Minh Phương cảm ơn các bạn nha! </button>
             </div>
 
             <div class="wishes-container" id="wishesList">
-                <div class="wish-bubble">
                 </div>
             </div>
         </div>
