@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thiệp Mời Tốt Nghiệp Siêu Cấp Hài Hước - Đinh Minh Phương</title>
+    <title>Thiệp Mời Tốt Nghiệp - Đinh Minh Phương</title>
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Mali:ital,wght@0,500;0,700;1,600&family=Pattaya&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -33,20 +33,46 @@
             overflow-x: hidden;
         }
 
-        /* Khung Thiệp Van Gogh Biến Tấu Vui Nhộn */
-        .card-container {
-            width: 100%;
-            max-width: 680px;
-            background-color: var(--paper-bg);
-            border-radius: 24px;
-            border: 8px solid var(--vg-yellow);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), inset 0 0 20px rgba(244, 196, 48, 0.3);
-            padding: 35px 25px;
+       /* Meme Avatar Kevin Hart Style */
+        .avatar-box {
             position: relative;
-            transform: rotate(-0.5deg);
-            background-image: 
-                radial-gradient(circle at 10% 10%, rgba(244, 196, 48, 0.2) 0%, transparent 40%),
-                radial-gradient(circle at 90% 90%, rgba(0, 180, 216, 0.2) 0%, transparent 40%);
+            width: 160px;
+            height: 160px;
+            margin: 0 auto 20px auto;
+            border-radius: 50%;
+            border: 5px solid var(--vg-blue);
+            background: #ffe3a8;
+            box-shadow: 0 8px 0px var(--vg-yellow);
+            animation: bounce 2s infinite alternate;
+        }
+
+        @keyframes bounce {
+            0% { transform: translateY(0) rotate(-2deg); }
+            100% { transform: translateY(-8px) rotate(2deg); }
+        }
+
+        /* CSS hiển thị ảnh tròn đẹp mắt */
+        .avatar-image {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .avatar-badge {
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%) rotate(3deg);
+            background: #e63946;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            box-shadow: 2px 2px 0 #000;
+            white-space: nowrap;
         }
 
         /* Banner Tiêu Đề */
