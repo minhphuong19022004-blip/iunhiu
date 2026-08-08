@@ -47,6 +47,7 @@
             background-image: 
                 radial-gradient(circle at 10% 10%, rgba(244, 196, 48, 0.2) 0%, transparent 40%),
                 radial-gradient(circle at 90% 90%, rgba(0, 180, 216, 0.2) 0%, transparent 40%);
+            text-align: center;
         }
 
         /* Banner Tiêu Đề */
@@ -79,44 +80,6 @@
             margin-bottom: 25px;
         }
 
-        /* Meme Avatar Van Gogh x Bằng Tốt Nghiệp */
-        .avatar-box {
-            position: relative;
-            width: 160px;
-            height: 160px;
-            margin: 0 auto 20px auto;
-            border-radius: 50%;
-            border: 5px solid var(--vg-blue);
-            background: #ffe3a8;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            box-shadow: 0 8px 0px var(--vg-yellow);
-            animation: bounce 2s infinite alternate;
-        }
-
-        @keyframes bounce {
-            0% { transform: translateY(0) rotate(-2deg); }
-            100% { transform: translateY(-8px) rotate(2deg); }
-        }
-
-        .avatar-emoji {
-            font-size: 80px;
-        }
-
-        .avatar-badge {
-            position: absolute;
-            bottom: -10px;
-            background: #e63946;
-            color: white;
-            padding: 4px 12px;
-            border-radius: 12px;
-            font-size: 0.8rem;
-            font-weight: bold;
-            transform: rotate(5deg);
-            box-shadow: 2px 2px 0 #000;
-        }
-
         /* Lời Mời Bá Đạo */
         .inviter-name {
             font-family: 'Comfortaa', cursive;
@@ -139,6 +102,7 @@
             line-height: 1.6;
             color: #1d3557;
             position: relative;
+            text-align: left;
         }
 
         .funny-quote::before {
@@ -405,10 +369,6 @@
         <h1 class="title">THIỆP MỜI DỰ LỄ TỐT NGHIỆP</h1>
         <div class="sub-title">"ĐMP chính thức ra trường, xã hội chuẩn bị tinh thần!" 🎓✨</div>
 
-      <div class="avatar-box">
-    <img src=""C:\Users\dinht\OneDrive\Pictures\kevinhart.jpg" alt="Kevin Hart Confused Meme" class="avatar-image">
-    <div class="avatar-badge">Kevin Hart Confused 🤷‍♂️</div>
-</div>
         <p style="font-size: 1.1rem;">Trân trọng giới thiệu SINH VIÊN XUẤT SẮC APD:</p>
         <div class="inviter-name">ĐINH MINH PHƯƠNG</div>
 
@@ -461,19 +421,19 @@
             </div>
         </div>
 
- <!-- Nhạc Nền Có Lời -->
-<div class="music-box">
-    <div class="music-info">
-        <span class="music-disc" id="disc">💿</span>
-        <span>Nhạc quẩy: <strong>Congratulations – Post Malone (Audio)</strong> 🎤🎵</span>
-    </div>
-    <button class="btn-play" id="playBtn" onclick="toggleMusic()">▶️ Bật Nhạc</button>
-    <audio id="bgMusic" loop preload="metadata">
-        <!-- Đường link file nhạc MP3 bản chính thức có lời -->
-        <source src="https://ia801503.us.archive.org/15/items/post-malone-congratulations-ft.-quavo/Post%20Malone%20-%20Congratulations%20ft.%20Quavo.mp3" type="audio/mpeg">
-        Trình duyệt của bạn không hỗ trợ phát âm thanh.
-    </audio>
-</div>
+        <!-- Nhạc Nền Có Lời -->
+        <div class="music-box">
+            <div class="music-info">
+                <span class="music-disc" id="disc">💿</span>
+                <span>Nhạc quẩy: <strong>Congratulations – Post Malone (Audio)</strong> 🎤🎵</span>
+            </div>
+            <button class="btn-play" id="playBtn" onclick="toggleMusic()">▶️ Bật Nhạc</button>
+            <audio id="bgMusic" loop preload="metadata">
+                <source src="https://ia801503.us.archive.org/15/items/post-malone-congratulations-ft.-quavo/Post%20Malone%20-%20Congratulations%20ft.%20Quavo.mp3" type="audio/mpeg">
+                Trình duyệt của bạn không hỗ trợ phát âm thanh.
+            </audio>
+        </div>
+
         <!-- Button Nút Điểm Danh -->
         <button class="rsvp-btn" onclick="confirmRSVP()">🙋‍♂️ Chắc Chắn Sẽ Đến Chúc Mừng!</button>
 
@@ -486,9 +446,7 @@
                 <button class="btn-send" onclick="addWish()">🚀 Minh Phương cảm ơn các bạn nha! </button>
             </div>
 
-            <div class="wishes-container" id="wishesList">
-                </div>
-            </div>
+            <div class="wishes-container" id="wishesList"></div>
         </div>
 
     </div>
