@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thiệp Mời Tốt Nghiệp - Đinh Minh Phương</title>
+    <title>Thiệp Mời Tốt Nghiệp Gen Z - Đinh Minh Phương</title>
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Mali:ital,wght@0,500;0,700;1,600&family=Pattaya&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -33,46 +33,22 @@
             overflow-x: hidden;
         }
 
-       /* Meme Avatar Kevin Hart Style */
-        .avatar-box {
-            position: relative;
-            width: 160px;
-            height: 160px;
-            margin: 0 auto 20px auto;
-            border-radius: 50%;
-            border: 5px solid var(--vg-blue);
-            background: #ffe3a8;
-            box-shadow: 0 8px 0px var(--vg-yellow);
-            animation: bounce 2s infinite alternate;
-        }
-
-        @keyframes bounce {
-            0% { transform: translateY(0) rotate(-2deg); }
-            100% { transform: translateY(-8px) rotate(2deg); }
-        }
-
-        /* CSS hiển thị ảnh tròn đẹp mắt */
-        .avatar-image {
+        /* Khung Thiệp */
+        .card-container {
             width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            object-fit: cover;
-            display: block;
-        }
-
-        .avatar-badge {
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%) rotate(3deg);
-            background: #e63946;
-            color: white;
-            padding: 4px 12px;
-            border-radius: 12px;
-            font-size: 0.8rem;
-            font-weight: bold;
-            box-shadow: 2px 2px 0 #000;
-            white-space: nowrap;
+            max-width: 680px;
+            background-color: var(--paper-bg);
+            background-image: linear-gradient(rgba(255, 252, 240, 0.88), rgba(255, 252, 240, 0.88)), 
+                              url('https://images.unsplash.com/photo-1579783902614-a3fb3927b675?q=80&w=1000&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            border-radius: 24px;
+            border: 8px solid var(--vg-yellow);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), inset 0 0 20px rgba(244, 196, 48, 0.3);
+            padding: 35px 25px;
+            position: relative;
+            transform: rotate(-0.5deg);
         }
 
         /* Banner Tiêu Đề */
@@ -105,7 +81,7 @@
             margin-bottom: 25px;
         }
 
-        /* Meme Avatar Van Gogh x Bằng Tốt Nghiệp */
+        /* Meme Avatar Kevin Hart Style */
         .avatar-box {
             position: relative;
             width: 160px;
@@ -141,6 +117,7 @@
             font-weight: bold;
             transform: rotate(5deg);
             box-shadow: 2px 2px 0 #000;
+            white-space: nowrap;
         }
 
         /* Lời Mời Bá Đạo */
@@ -156,7 +133,7 @@
         }
 
         .funny-quote {
-            background: rgba(0, 180, 216, 0.1);
+            background: rgba(0, 180, 216, 0.12);
             border: 2px dashed var(--vg-cyan);
             border-radius: 16px;
             padding: 15px;
@@ -206,7 +183,7 @@
             border: 2px solid #000;
         }
 
-        /* Khung Hình Trống Chèn Ảnh Kèm Chú Thích Hài Hước */
+        /* Khung Hình Trống Chèn Ảnh */
         .photo-section {
             margin: 30px 0;
         }
@@ -274,18 +251,23 @@
             text-align: center;
         }
 
-        /* Trình Phát Nhạc Đĩa Than Hài Hước */
+        /* Trình Phát Nhạc */
         .music-box {
             background: var(--vg-blue);
             color: #fff;
-            border-radius: 50px;
-            padding: 10px 20px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+            border-radius: 20px;
+            padding: 15px 20px;
             margin: 25px 0;
             border: 3px solid var(--vg-yellow);
             box-shadow: 4px 4px 0 #000;
+            text-align: left;
+        }
+
+        .music-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
         }
 
         .music-info {
@@ -296,7 +278,7 @@
         }
 
         .music-disc {
-            font-size: 24px;
+            font-size: 28px;
             animation: spin 3s linear infinite;
             animation-play-state: paused;
         }
@@ -321,12 +303,7 @@
             box-shadow: 2px 2px 0 #000;
         }
 
-        .btn-play:active {
-            transform: translate(2px, 2px);
-            box-shadow: none;
-        }
-
-        /* Sổ Lưu Bút Bá Đạo */
+        /* Sổ Lưu Bút */
         .guestbook {
             background: rgba(244, 196, 48, 0.15);
             border-radius: 20px;
@@ -404,9 +381,9 @@
         .rsvp-btn {
             background: #2a9d8f;
             color: white;
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             font-weight: bold;
-            padding: 12px 30px;
+            padding: 12px 25px;
             border-radius: 50px;
             border: 3px solid #000;
             box-shadow: 4px 4px 0 #000;
@@ -426,25 +403,25 @@
 
     <div class="card-container">
         <!-- Banner Hài Hước -->
-        <div class="header-tag">🚨 CẢNH BÁO SỰ KIỆN NGHÌN NĂM CÓ MỘT 🚨</div>
+        <div class="header-tag">🚨 CẢNH BÁO: SỰ KIỆN NGHÌN NĂM CÓ MỘT 🚨</div>
         
         <h1 class="title">THIỆP MỜI DỰ LỄ TỐT NGHIỆP</h1>
-        <div class="sub-title">"ĐMP chính thức ra trường, xã hội chuẩn bị tinh thần!" 🎓✨</div>
+        <div class="sub-title">Slay hết nấc - Nhận bằng rồi cất bước đi chill! ✨💃</div>
 
-        <!-- Meme Avatar Kevin Hart Style (Ảnh Đã Chèn) -->
-<div class="avatar-box">
-    <!-- CHÈN ĐƯỜNG LINK ẢNH KEVIN HART VÀO ĐÂY -->
-    <img src="DUONG_LINK_ANH_KEVIN_HART_CUA_BAN.jpg" alt="Kevin Hart Confused Meme" class="avatar-image">
-    
-    <div class="avatar-badge">Kevin Hart Confused 🤷‍♂️</div>
-</div>
+        <!-- Meme Avatar Kevin Hart Style -->
+        <div class="avatar-box">
+            <span class="avatar-emoji">🧐🎓</span>
+            <div class="avatar-badge">Kevin Hart Confused 🤷‍♂️</div>
+        </div>
 
-        <p style="font-size: 1.1rem;">Trân trọng giới thiệu SINH VIÊN XUẤT SẮC APD:</p>
+        <p style="font-size: 1.15rem; font-weight: bold; color: #f3722c;">
+            Chân dung Top 1 Server chạy deadline phút 89:
+        </p>
         <div class="inviter-name">ĐINH MINH PHƯƠNG</div>
 
-        <!-- Lời Mời Hài Hước -->
+        <!-- Lời Mời Nhẹ Nhàng Tình Cảm Hài Hước -->
         <div class="funny-quote">
-            "Trải qua 1410 ngày ở APD thì ngày này cũng đã tới! Cảm ơn các cô chú anh chị vì đã luôn đồng hành và là một phần kỷ niệm đẹp của Minh Phương. Hẹn gặp các bạn tại Hội trường 886 để cùng trao nhau những lời iu thương và lưu giữ khoảnh khắc đáng nhớ này nha!"
+            "Sau bao đêm mắt nhắm mắt mở cày deadline, cuối cùng Phương cũng cầm được tấm bằng tốt nghiệp rồi! Thanh xuân của Phương sẽ rực rỡ hơn rất nhiều nếu có bạn ở bên. Đến điểm danh, chụp vài kiểu ảnh thật xinh (hoặc dìm hàng nhẹ nhẹ) và chung vui cùng Phương nhé!"
         </div>
 
         <!-- Thông Tin Chi Tiết -->
@@ -459,7 +436,7 @@
             <div class="info-item">
                 <div class="info-icon">🏛️</div>
                 <div>
-                    <strong>Địa điểm:</strong> Hội trường 886<br>
+                    <strong>Địa điểm:</strong> Hội trường 808<br>
                     <small style="color: #666;">(Nơi hội tụ những nhan sắc đỉnh cao ngày tốt nghiệp)</small>
                 </div>
             </div>
@@ -467,7 +444,7 @@
 
         <!-- Khung Chèn Ảnh Trống Tương Tác -->
         <div class="photo-section">
-            <div class="section-title">📸 Khung Ảnh Kỷ Niệm </div>
+            <div class="section-title">📸 Khung Ảnh Kỷ Niệm (Bấm để chèn ảnh)</div>
             <div class="photo-grid">
                 
                 <div class="polaroid-card" onclick="triggerUpload(1)">
@@ -491,32 +468,35 @@
             </div>
         </div>
 
- <!-- Nhạc Nền Có Lời -->
-<div class="music-box">
-    <div class="music-info">
-        <span class="music-disc" id="disc">💿</span>
-        <span>Nhạc quẩy: <strong>Congratulations – Post Malone (Audio)</strong> 🎤🎵</span>
-    </div>
-    <button class="btn-play" id="playBtn" onclick="toggleMusic()">▶️ Bật Nhạc</button>
-    <audio id="bgMusic" loop preload="metadata">
-        <!-- Đường link file nhạc MP3 bản chính thức có lời -->
-        <source src="https://ia801503.us.archive.org/15/items/post-malone-congratulations-ft.-quavo/Post%20Malone%20-%20Congratulations%20ft.%20Quavo.mp3" type="audio/mpeg">
-        Trình duyệt của bạn không hỗ trợ phát âm thanh.
-    </audio>
-</div>
-        <!-- Button Nút Điểm Danh -->
+        <!-- Trình Phát Nhạc Nền Có Lời -->
+        <div class="music-box">
+            <div class="music-header">
+                <div class="music-info">
+                    <span class="music-disc" id="disc">💿</span>
+                    <span>Nhạc quẩy: <strong>Congratulations – Post Malone (Audio)</strong> 🎤🎵</span>
+                </div>
+                <button class="btn-play" id="playBtn" onclick="toggleMusic()">▶️ Bật Nhạc</button>
+            </div>
+            <audio id="bgMusic" loop preload="metadata">
+                <source src="https://ia801503.us.archive.org/15/items/post-malone-congratulations-ft.-quavo/Post%20Malone%20-%20Congratulations%20ft.%20Quavo.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+
+        <!-- Nút Xác Nhận Tham Dự -->
         <button class="rsvp-btn" onclick="confirmRSVP()">🙋‍♂️ Chắc Chắn Sẽ Đến Chúc Mừng!</button>
 
         <!-- Sổ Lưu Bút Xịn Xò -->
         <div class="guestbook">
-            <h3>📖 Sổ Lưu Bút "Bóc Phốt" & Lời Chúc</h3>
+            <h3>📖 Sổ Lưu Bút & Ngàn Lời Yêu Thương</h3>
             <div class="input-group">
-                <input type="text" id="guestName" placeholder="Danh tính của bạn (hoặc Biệt danh secret)...">
-                <textarea id="guestWish" rows="2" placeholder="Gửi vài lời iu thương..."></textarea>
-                <button class="btn-send" onclick="addWish()">🚀 Minh Phương cảm ơn các bạn nha! </button>
+                <input type="text" id="guestName" placeholder="Tên danh tính của bạn (hoặc Biệt danh secret)...">
+                <textarea id="guestWish" rows="2" placeholder="Gửi lời chúc ngọt ngào, mặn mòi hoặc dìm hàng nhẹ nhàng..."></textarea>
+                <button class="btn-send" onclick="addWish()">💌 Thả Tim & Gửi Yêu Thương</button>
             </div>
 
             <div class="wishes-container" id="wishesList">
+                <div class="wish-bubble">
+                    <span class="wish-name">Hội Bạn Thân:</span> Chúc mừng Minh Phương tốt nghiệp rực rỡ! Tốt nghiệp rồi nhớ khao chè bưởi nha 🍧🎉
                 </div>
             </div>
         </div>
@@ -566,7 +546,7 @@
             const wish = document.getElementById('guestWish').value.trim();
 
             if (!name || !wish) {
-                alert('Vui lòng nhập tên và lời chúc bá đạo của bạn nhé!');
+                alert('Vui lòng nhập tên và lời chúc ngọt ngào của bạn nhé!');
                 return;
             }
 
@@ -586,7 +566,7 @@
         }
 
         function confirmRSVP() {
-            alert('Đã chốt kèo! Không nhận hủy đơn dưới mọi hình thức, quay xe là Phương tới tận nhà rước đó nha! Iu các bạn nhìu! 🥳🎉');
+            alert('1000 điểm uy tín! Đã khóa Slot của bạn tại Hội trường 808. Hẹn gặp bạn ở buổi lễ nhé! 🎉✨');
         }
     </script>
 </body>
